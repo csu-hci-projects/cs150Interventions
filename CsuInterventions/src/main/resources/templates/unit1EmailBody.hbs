@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CS 150: Unit One - Resources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="margin: 20px; padding: 0;font-size:14px;">
+
+<h1 style="font-size:16px;">Hello {{fname}} {{lname}}</h1>
+
+<p>After reviewing your exam and other content in the course, we noticed that you were not <i>yet</i>
+    meeting expectations in certain topic areas. Do not worry, these are challenging topics, and it is completely fine
+    to not understand them the first time around. However, in order to prepare you for the next exam we
+    wanted to provide you with some resources to improve your understanding of the content area you need to grow in.
+    Please remember, programming is like music. You need to practice to become successful at it.
+</p>
+
+<p>
+    Please note, these are third party resources selected by the TAs and other students. You should <b>not</b>
+    sign up for anything, and none of this is required work! It is simply a third party
+    option to present the topic in a different manner. These are intentionally not in a set order.
+    As such, it is alright to find a resource not to your liking and quickly move to the next one.
+    If you find it useful, we encourage you to return to that resource.
+</p>
+
+<h3 style="font-size:15px;">Here are some topics we encourage you to work on:</h3>
+
+
+{{#if resources.[programming > fundamentals]}}
+    <div id="branching">
+        <h4>Fundamentals - Operations/Syntax</h4>
+        <p>Here are some resources for you to look at fundamental java concepts.</p>
+        <ul>
+            {{# each resources.[programming > fundamentals] }}
+                <li><a href="{{this.student-url}}" title="{{this.name}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+
+{{#if resources.[programming > branching]}}
+    <div id="branching">
+        <h4>Branching - If/Else</h4>
+        <p>Here are some resources for you to look at branching and logic in another way.</p>
+<ul>
+{{# each resources.[programming > branching] }}
+    <li><a href="{{this.student-url}}" title="{{this.name}}">{{this.name}}</a></li>
+{{/each}}
+</ul>
+    </div>
+{{/if}}
+
+{{#if resources.[programming > methods]}}
+    <div id="branching">
+        <h4>Methods </h4>
+        <p>Here are some resources for you to look at method.</p>
+        <ul>
+            {{# each resources.[programming > methods] }}
+                <li><a href="{{this.student-url}}" title="{{this.name}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+
+
+
+<p>
+As always, please know the TAs are available for tutoring time, which you can find all of our hours
+    on the <a title="{{resources.course-website.name}}" href="{{resources.course-website.student-url}}">{{resources.course-website.name}}</a>.
+    You can also go directly to the <a title="{{resources.canvas-calendar.name}}" href="{{resources.canvas-calendar.student-url}}">{{resources.canvas-calendar.name}}</a>
+    and setup an appointment. We highly recommend signing up for appointments, as it helps us
+    track our time. To signup, go to the calendar, and click the 'Find Appointment' button.
+    Furthermore, Westin has a group study Fridays at 11:00 AM in COMSCI 225. You
+    can signup for a slot using the canvas calendar above.
+</p>
+
+
+<p>These topics can be a challenge to understand, so our hope is that by taking the time to look over the
+    resources provided, you will start to feel more confident in your knowledge of the content area.</p>
+
+<p>Last but not least, we want you to know you are doing better than you realize. While we all struggle
+in certain areas, to struggle is to learn. You are learning, and growing. Keep with a
+    growth mindset and practice.</p>
+
+
+<p>Take Care,<br/>
+Albert, Josette, Westin, Maddie, Ashlyn, Kevin, and Corbin<br>
+{{courseId}}
+
+
+</body>
+
+

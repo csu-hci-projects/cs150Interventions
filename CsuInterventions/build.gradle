@@ -1,0 +1,103 @@
+
+
+buildscript {
+    // Consider moving these values to `gradle.properties`
+    ext.kotlin_version = '1.3.50'
+    ext.ktor_version = '+'
+    ext.appengine_version = '+'
+    ext.appengine_plugin_version = '+'
+    ext.firebase_version = '6.10.0'
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+        classpath "com.google.cloud.tools:appengine-gradle-plugin:$appengine_plugin_version"
+        classpath 'com.google.api-client:google-api-client:1.30.2'
+        classpath 'com.google.apis:google-api-services-oauth2:v1-rev155-1.25.0'
+    }
+
+
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'war'
+apply plugin: 'com.google.cloud.tools.appengine'
+
+
+sourceSets {
+    main.kotlin.srcDirs = [ 'src/main/kotlin' ]
+}
+
+repositories {
+    jcenter()
+    maven { url "https://kotlin.bintray.com/ktor" }
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+}
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/com.sun.mail/javax.mail
+    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+
+    // https://mvnrepository.com/artifact/com.google.apis/google-api-services-sheets
+    compile group: 'com.google.apis', name: 'google-api-services-sheets', version: 'v4-rev581-1.25.0'
+
+
+    // https://mvnrepository.com/artifact/com.google.api-client/google-api-client-appengine
+    compile group: 'com.google.api-client', name: 'google-api-client-appengine', version: '1.30.4'
+    compile 'com.google.apis:google-api-services-oauth2:v1-rev155-1.25.0'
+
+    // https://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk
+    compile group: 'com.google.appengine', name: 'appengine-api-1.0-sdk', version: '1.9.76'
+
+    // https://mvnrepository.com/artifact/com.google.api.client/google-api-client-googleapis
+//    compile group: 'com.google.api.client', name: 'google-api-client-googleapis', version: '1.4.0-alpha'
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.13.0" // JVM dependency
+
+    compile "io.ktor:ktor-server-servlet:$ktor_version"
+    compile "io.ktor:ktor-html-builder:$ktor_version"
+
+    compile "com.google.firebase:firebase-admin:$firebase_version"
+
+    compile 'com.google.api-client:google-api-client:1.30.2'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+    compile 'com.google.apis:google-api-services-gmail:v1-rev83-1.23.0'
+
+    providedCompile "com.google.appengine:appengine:$appengine_version"
+
+    compile "ch.qos.logback:logback-classic:1.2.3"
+    implementation 'com.github.jknack:handlebars:4.1.2'
+
+
+
+
+}
+
+
+
+//kotlin.experimental.coroutines = 'enable'
+
+//task run(dependsOn: appengineRun)
+
+appengine {
+    tools {
+        // configure the Cloud Sdk tooling
+    }
+    run {
+        // configure local run
+    }
+    stage {
+        // configure staging for deployment
+    }
+    deploy {
+        // configure deployment
+        projectId = 'GCLOUD_CONFIG'
+        version = 'GCLOUD_CONFIG'
+    }
+}
