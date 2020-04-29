@@ -10,7 +10,7 @@
 # Latex File
 [Latex File](checkpoint2.pdf)
 
-#Description 
+# Description 
 
 *  SetInactiveStudents.kt: Kotlin script that looks at all the students in the course that you want to send emails to and sets any student that has dropped the class as inactive
    + currentStudents.csv: csv file containing all the active students in the class. This file is
