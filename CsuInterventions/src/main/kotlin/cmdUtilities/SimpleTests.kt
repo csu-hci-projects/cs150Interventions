@@ -1,20 +1,23 @@
 package edu.colostate.csedu.cmdUtilities
 
 import edu.colostate.csedu.DB
-import edu.colostate.csedu.db.entity.Campaign
-import edu.colostate.csedu.db.entity.Click
-import edu.colostate.csedu.db.entity.Outcome
+import edu.colostate.csedu.db.entity.*
 
 /**
  * Simple test method as I rework the student tables
  */
 fun main(args: Array<String>) {
+    //1 - save inactive to database
+    //2 - save campaign to database
+    //3 - save outcome to database
 
-    val students = DB.students.getAll()
-
-
-
-
+    //4
+    //make sure we can access our handle bars and print something out
+    //make sure we can print something based on if they have met expectations
+    //start building the email string
+    //handle bars are templated maps(json object)
+    //map of links, links are click object
+    //passing in the object for every student to build a string(email body)
 }
 
 fun addClickDefaultTest() {
@@ -31,7 +34,7 @@ fun addClickDefaultTest() {
                     url = resource.url,
                     campaignId = campaign!!.id)
             click.id = Click.findUnique(5, DB)
-            DB.clicks.set(click)
+   //         DB.clicks.set(click)
         }
     }
 

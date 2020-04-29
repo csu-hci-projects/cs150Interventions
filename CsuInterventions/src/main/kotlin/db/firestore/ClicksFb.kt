@@ -3,6 +3,7 @@ package edu.colostate.csedu.db.firestore
 import edu.colostate.csedu.db.Clicks
 import edu.colostate.csedu.db.entity.Click
 import edu.colostate.csedu.db.entity.Course
+import edu.colostate.csedu.db.entity.Student
 
 /**
  *
@@ -29,7 +30,18 @@ class ClicksFb(val db:Firebase) : Clicks {
         return null
     }
 
+    override fun getAll() : Map<String, Click>{
+        val collection = db.getCollection(CLICKS_TABLE_NAME)
+        val clicks = mutableMapOf<String,Click>();
+        for(document in collection){
+            clicks[document.id] = document.toObject(Click::class.java)
+            clicks[document.id]?.id = document.id
+        }
+        return clicks;
+    }
+
     companion object {
         const val CLICKS_TABLE_NAME = "clicks"
     }
+
 }
