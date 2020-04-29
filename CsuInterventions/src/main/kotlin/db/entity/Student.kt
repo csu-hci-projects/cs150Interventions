@@ -20,7 +20,7 @@ data class Student(var canvasId:String = "", var csuid:String = "",
                    var lname:String="",
                    var courses: MutableList<String> = mutableListOf()) : Mappable() {
 
-    val outcomeMapping = mutableMapOf<String, StudentOutcome>()
+    var outcomeMapping = mutableMapOf<String, StudentOutcome>()
 
     fun addToOutcomeResult(result: OutcomeResult) {
         outcomeMapping[result.outcomeId]?.history?.add(result)

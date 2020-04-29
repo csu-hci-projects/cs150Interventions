@@ -24,6 +24,7 @@ interface Database {
 }
 
 interface Clicks {
+    fun getAll():  Map<String, Click>
     fun set(click:Click)
     fun get(clickId:String) : Click?
 }

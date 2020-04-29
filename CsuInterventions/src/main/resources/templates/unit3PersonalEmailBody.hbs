@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CS 150: Unit Three - Resources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="margin: 20px; padding: 0;font-size:14px;">
+
+<h1 style="font-size:16px;">Hello {{fname}} {{lname}}</h1>
+
+<p>After reviewing your exam and other content in the course, we noticed that you were not yet meeting 
+  expectations in certain topic areas. Do not worry, these are challenging topics, and it is completely
+  fine to not understand them the first time around. However, in order to prepare you for the next exam 
+  we wanted to provide you with some resources to improve your understanding of the content area you need 
+  to grow in. Please remember, programming is like music; you need to practice to become successful at it.
+</p>
+
+<p>
+    Please note, these are third party resources selected by the TAs and other students. You should not 
+    sign up for anything, and none of this is required work! It is simply a third party option to present 
+    the topic in a different manner. These are intentionally not in a set order. As such, it is alright 
+    to find a resource not to your liking and quickly move to the next one. If you find it useful, we 
+    encourage you to return to that resource.
+</p>
+
+<h3 style="font-size:15px;">Here are some topics we encourage you to work on:</h3>
+
+{{#if resources.[NS.CS.ALL.2020.JAVA.FUNDAMENTALS]}}
+    <div id="branching">
+        <h4>Fundamentals - Operations/Syntax</h4>
+        <p>Here are some resources for you to look at fundamental java concepts.</p>
+        <ul>
+            {{#each resources.[NS.CS.ALL.2020.JAVA.FUNDAMENTALS] }}
+                <li><a href="{{this.url}}" title="{{this.name}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+
+{{#if resources.[NS.CS.ALL.2020.JAVA.BRANCHING]}}
+    <div id="branching">
+        <h4>Branching - If/Else</h4>
+        <p>Here are some resources for you to look at branching and logic in another way.</p>
+<ul>
+{{#each resources.[NS.CS.ALL.2020.JAVA.BRANCHING] }}
+    <li><a href="{{this.url}}" title="{{this.name}}">{{this.name}}</a></li>
+{{/each}}
+</ul>
+    </div>
+{{/if}}
+
+{{#if resources.[NS.CS.ALL.2020.JAVA.METHODS]}}
+    <div id="branching">
+        <h4>Methods </h4>
+        <p>Here are some resources for you to look at methods.</p>
+        <ul>
+            {{#each resources.[NS.CS.ALL.2020.JAVA.METHODS] }}
+                <li><a href="{{this.url}}" title="{{this.name}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+{{#if resources.[NS.CS.ALL.2020.JAVA.REPETITION]}}
+    <div id="branching">
+        <h4>Loops </h4>
+        <p>Here are some resources for you to look at loops.</p>
+        <ul>
+            {{#each resources.[NS.CS.ALL.2020.JAVA.REPETITION] }}
+                <li><a href="{{this.url}}" title="{{this.name}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+{{#if resources.[NS.CS.ALL.2020.JAVA.COMMON]}}
+    <div id="branching">
+        <h4>Strings </h4>
+        <p>Here are some resources for you to look at strings.</p>
+        <ul>
+            {{#each resources.[NS.CS.ALL.2020.JAVA.COMMON] }}
+                <li><a href="{{this.url}}" title="{{this.name}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+{{#if resources.[NS.CS.ALL.2020.JAVA.ARRAYS]}}
+    <div id="branching">
+        <h4>Arrays </h4>
+        <p>Here are some resources for you to look at arrays.</p>
+        <ul>
+            {{#each resources.[NS.CS.ALL.2020.JAVA.ARRAYS] }}
+                <li><a href="{{this.url}}" title="{{this.name}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+
+
+<p>
+    As always, please know the TAs are available for tutoring time over Slack, which you can find
+    all of our hours on the CS 150 Website. These topics can be a challenge to understand,
+    so our hope is that by taking the time to look over the resources provided, you will start
+    to feel more confident in your knowledge of the content area.
+</p>
+
+<p>Last but not least, we want you to know you are doing better than you realize.  While we all struggle
+in certain areas, to struggle is to learn. You are learning, and growing. Keep with a
+    growth mindset and practice.</p>
+
+
+<p>Take Care,<br/>
+Albert, Westin, Maddie, Ashlyn, Kevin, Corbin, Drake, Arysa<br>
+{{courseId}}
+
+
+</body>
